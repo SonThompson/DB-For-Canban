@@ -5,7 +5,7 @@ namespace FunPart.Entities
     public class Users
     {
         [Key]
-        public string? Name { get; set; }
+        public string? Nickname { get; set; }
         public string? Password { get; set; }
 
         public int? TasksId { get; set; }

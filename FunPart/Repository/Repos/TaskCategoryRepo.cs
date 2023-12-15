@@ -51,9 +51,9 @@ namespace FunPart.Repository.Repos
 
         public async Task<bool> Update(TaskCategories entity)
         {
-            var entityToUpsert = await dbSet.FindAsync(entity.Name);
+            var entityToUpsert = await dbSet.FindAsync(entity.Nickname);
 
-            entityToUpsert.Name = entity.Name;
+            entityToUpsert.Nickname = entity.Nickname;
 
             return true;
         }

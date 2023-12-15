@@ -27,7 +27,7 @@ namespace FunPart
             {
                 entity.ToTable("users");
                 
-                entity.HasKey(x => x.Name).HasName("PK_dbo.Users");
+                entity.HasKey(x => x.Nickname).HasName("PK_dbo.Users");
 
                 entity.HasMany(x => x.Tasks).WithOne(x => x.User).OnDelete(DeleteBehavior.Restrict);
             });
@@ -36,7 +36,7 @@ namespace FunPart
             {
                 entity.ToTable("TaskCategories");
 
-                entity.HasKey(x => x.Name).HasName("PK_dbo.TaskCategories");
+                entity.HasKey(x => x.Nickname).HasName("PK_dbo.TaskCategories");
 
                 entity.HasMany(x => x.Tasks).WithOne(x => x.TaskCategory).OnDelete(DeleteBehavior.Restrict);
             });

@@ -7,13 +7,14 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
+EXPOSE 7236
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["FunPart/FunPart.csproj", "FunPart/"]
-RUN dotnet restore "FunPart/FunPart.csproj"
+COPY ["./FunPart.csproj", "./"]
+RUN dotnet restore "./FunPart.csproj"
 COPY . .
-WORKDIR "/src/FunPart"
+WORKDIR "/src"
 RUN dotnet build "FunPart.csproj" -c Release -o /app/build
 
 FROM build AS publish

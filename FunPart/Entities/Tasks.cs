@@ -6,6 +6,7 @@ namespace FunPart.Entities
     {
         [Key]
         public int? Id { get; set; }
+        public string Description { get; set; }
 
         public Users? User { get; set; } = new();
         public TaskCategories? TaskCategory { get; set; } = new();

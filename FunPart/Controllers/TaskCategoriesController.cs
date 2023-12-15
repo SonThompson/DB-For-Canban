@@ -85,7 +85,7 @@ namespace FunPart.Controllers
                 await repository.Add(entity);
                 await repository.SaveAsync();
 
-                return Ok(new { Id = entity.Name });
+                return Ok(new { Id = entity.Nickname });
             }
             catch (Exception ex)
             {

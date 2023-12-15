@@ -7,7 +7,7 @@ namespace FunPart.Models
     {
         [Key]
         [Required(ErrorMessage = "{0} Обязательный параметр")]
-        public string? Name { get; set; }
+        public string? Nickname { get; set; }
 
         public int? TasksId { get; set; }
         public List<Tasks>? Tasks { get; set; } = new();
